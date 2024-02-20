@@ -1,9 +1,7 @@
+import 'package:book_app/Features/home/presentation/views/widgets/best_seller_view.dart';
 import 'package:book_app/Features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:book_app/core/utilits/Styles.dart';
-import 'package:book_app/core/utilits/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'best_seller_view_item.dart';
 import 'books_listview_horizontal.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -11,26 +9,40 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          BookListViewHorizontal(),
-          SizedBox(
-            height: 50,
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: CustomAppBar(),
+              ),
+              BookListViewHorizontal(),
+              SizedBox(
+                height: 50,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: Text(
+                  'Best Seller',
+                  style: Styles.textStyle18,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+            ],
           ),
-          Text(
-            'Best Seller',
-            style: Styles.textStyle18,
+        ),
+        SliverFillRemaining(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: VerticaBestSellerlListView(),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          SizedBox(height: 400, child: VerticaBestSellerlListView()),
-        ],
-      ),
+        )
+      ],
     );
   }
 }

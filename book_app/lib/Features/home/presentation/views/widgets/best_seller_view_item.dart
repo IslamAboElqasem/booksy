@@ -73,23 +73,3 @@ class BestSellerViewItem extends StatelessWidget {
     );
   }
 }
-
-class VerticaBestSellerlListView extends StatelessWidget {
-  const VerticaBestSellerlListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: AssetsData().getNumberOfBestSellerBooks(),
-      scrollDirection: Axis.vertical,
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: BestSellerViewItem(
-            kItem: index,
-          ),
-        );
-      },
-    );
-  }
-}
