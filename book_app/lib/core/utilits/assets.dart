@@ -36,6 +36,7 @@ class AssetsData {
       '19.99 £',
       '4.3',
       '(4083)',
+      '6'
     ],
     AssetsData.listOfBooks[8]: [
       'Rich Dad Poor Dad ',
@@ -43,6 +44,7 @@ class AssetsData {
       '12.33 £',
       '4.8',
       '(15189)',
+      '8',
     ],
     AssetsData.listOfBooks[1]: [
       'The Pychology Of Money ',
@@ -50,6 +52,7 @@ class AssetsData {
       '18.00 £',
       '4.6',
       '(5466)',
+      '1'
     ],
     AssetsData.listOfBooks[4]: [
       'The Hidden People ',
@@ -57,6 +60,7 @@ class AssetsData {
       '15.99 £',
       '4.1',
       '(3224)',
+      '4'
     ],
   };
 
