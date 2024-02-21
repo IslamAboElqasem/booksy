@@ -1,3 +1,4 @@
+import 'package:book_app/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:book_app/Features/home/presentation/views/widgets/custom_appbar_book_details.dart';
 import 'package:book_app/core/utilits/styles.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +37,13 @@ class BookDetailsViewBody extends StatelessWidget {
             'J.k. Rowling',
             style: Styles.textStyle18.copyWith(
                 fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
+          ),
+          const SizedBox(
+            height: 18,
+          ),
+          const BookRating(
+            kItem: 0,
+            mainAxisAlignment: MainAxisAlignment.center,
           )
         ],
       ),
