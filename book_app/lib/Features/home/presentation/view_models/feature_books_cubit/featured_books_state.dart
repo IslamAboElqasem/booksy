@@ -7,17 +7,17 @@ sealed class FeaturedBooksState extends Equatable {
   List<Object> get props => [];
 }
 
-final class FeaturedBooksInitial extends FeaturedBooksState {}
+class FeaturedBooksInitial extends FeaturedBooksState {}
 
-final class FeaturedBooksLoading extends FeaturedBooksState {}
+class FeaturedBooksLoading extends FeaturedBooksState {}
 
-final class FeaturedBooksSuccess extends FeaturedBooksState {
+class FeaturedBooksSuccess extends FeaturedBooksState {
   final List<BookModel> books;
 
   const FeaturedBooksSuccess(this.books);
 }
 
-final class FeaturedBooksFailure extends FeaturedBooksState {
+class FeaturedBooksFailure extends FeaturedBooksState {
   final String errorMessage;
   const FeaturedBooksFailure(this.errorMessage);
 }
