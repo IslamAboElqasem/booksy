@@ -2,7 +2,7 @@ import 'package:book_app/Features/home/presentation/views/widgets/best_seller_vi
 import 'package:book_app/Features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:book_app/core/utilits/Styles.dart';
 import 'package:flutter/material.dart';
-import 'books_listview_horizontal.dart';
+import 'feature_books_listview.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -19,7 +19,7 @@ class HomeViewBody extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: CustomAppBar(),
               ),
-              BookListViewHorizontal(),
+              FeatureBookListView(),
               SizedBox(
                 height: 50,
               ),

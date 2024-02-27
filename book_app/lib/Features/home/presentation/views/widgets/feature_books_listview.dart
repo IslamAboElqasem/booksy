@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'cistom_list_view_item.dart';
 
-class BookListViewHorizontal extends StatelessWidget {
-  const BookListViewHorizontal({super.key});
+class FeatureBookListView extends StatelessWidget {
+  const FeatureBookListView({super.key});
 
   @override
   Widget build(BuildContext context) {
