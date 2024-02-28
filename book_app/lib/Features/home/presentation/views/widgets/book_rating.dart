@@ -1,14 +1,10 @@
-import 'package:book_app/core/utilits/assets.dart';
 import 'package:book_app/core/utilits/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRating extends StatelessWidget {
   const BookRating(
-      {super.key,
-      required this.kItem,
-      this.mainAxisAlignment = MainAxisAlignment.start});
-  final int kItem;
+      {super.key, this.mainAxisAlignment = MainAxisAlignment.start});
   final MainAxisAlignment mainAxisAlignment;
 
   @override
@@ -24,15 +20,15 @@ class BookRating extends StatelessWidget {
         const SizedBox(
           width: 10,
         ),
-        Text(
-          AssetsData.mapOfBestSeller.values.toList()[kItem][3],
+        const Text(
+          '4.8',
           style: Styles.textStyle16,
         ),
         const SizedBox(
           width: 8,
         ),
         Text(
-          AssetsData.mapOfBestSeller.values.toList()[kItem][4],
+          '(15189)',
           style: Styles.textStyle14.copyWith(color: const Color(0xFF707070)),
         )
       ],

@@ -14,9 +14,7 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.18),
-          child: const CustomListViewItem(
-            kItyem: 6,
-          ),
+          child: const CustomListViewItem(),
         ),
         const SizedBox(
           height: 20,
@@ -38,7 +36,6 @@ class BookDetailsSection extends StatelessWidget {
           height: 18,
         ),
         const BookRating(
-          kItem: 0,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(

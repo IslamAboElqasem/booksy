@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerViewItem extends StatelessWidget {
-  const BestSellerViewItem({super.key, required this.kItem});
-
-  final int kItem;
+  const BestSellerViewItem({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,17 +24,17 @@ class BestSellerViewItem extends StatelessWidget {
         child: Row(
           children: [
             AspectRatio(
-                aspectRatio: 2.5 / 4.1,
-                child: Container(
+              aspectRatio: 2.5 / 4.1,
+              child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.red,
-                    image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage(
-                            AssetsData.mapOfBestSeller.keys.toList()[kItem])),
-                  ),
-                )),
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.red,
+                image: const DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage(AssetsData.book1),
+                ),
+              )),
+            ),
             const SizedBox(
               width: 30,
             ),
@@ -46,7 +46,7 @@ class BestSellerViewItem extends StatelessWidget {
                       height: 55,
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: Text(
-                        AssetsData.mapOfBestSeller.values.toList()[kItem][0],
+                        'Harry Potter and the Philosopher’s Stone ',
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: Styles.textStyle20
@@ -56,8 +56,8 @@ class BestSellerViewItem extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                    Text(
-                      AssetsData.mapOfBestSeller.values.toList()[kItem][1],
+                    const Text(
+                      'J.k. Rowling',
                       style: Styles.textStyle14,
                     ),
                     const SizedBox(
@@ -66,14 +66,12 @@ class BestSellerViewItem extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          AssetsData.mapOfBestSeller.values.toList()[kItem][2],
+                          '12.33 £',
                           style: Styles.textStyle20
                               .copyWith(fontWeight: FontWeight.w900),
                         ),
                         const Spacer(),
-                        BookRating(
-                          kItem: kItem,
-                        )
+                        const BookRating()
                       ],
                     )
                   ]),
