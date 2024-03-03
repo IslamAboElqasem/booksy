@@ -1,4 +1,3 @@
-import 'package:book_app/Features/home/presentation/views/widgets/best_seller_view_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchResulListtView extends StatelessWidget {
@@ -10,9 +9,9 @@ class SearchResulListtView extends StatelessWidget {
       scrollDirection: Axis.vertical,
       itemBuilder: (context, index) {
         return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          child: BestSellerViewItem(),
-        );
+            padding: EdgeInsets.symmetric(vertical: 10), child: Text('data')
+            //BestSellerViewItem(),
+            );
       },
     );
   }
