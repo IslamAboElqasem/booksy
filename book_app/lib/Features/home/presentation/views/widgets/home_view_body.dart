@@ -1,11 +1,11 @@
+import 'package:book_app/Features/home/presentation/views/widgets/feature_books_listview.dart';
 import 'package:book_app/Features/home/presentation/views/widgets/newest_books_view.dart';
-import 'package:book_app/Features/home/presentation/views/widgets/custom_app_bar.dart';
-import 'package:book_app/core/utilits/Styles.dart';
+import 'package:book_app/core/utilits/styles.dart';
 import 'package:flutter/material.dart';
-import 'feature_books_listview.dart';
+import 'custom_app_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +17,10 @@ class HomeViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: CustomAppBar(),
-              ),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 30,
+                  ),
+                  child: CustomAppBar()),
               FeatureBookListView(),
               SizedBox(
                 height: 50,
@@ -27,7 +28,7 @@ class HomeViewBody extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
-                  'Newest books',
+                  'Newset Books',
                   style: Styles.textStyle18,
                 ),
               ),
@@ -42,7 +43,7 @@ class HomeViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 30),
             child: NewestBooksListView(),
           ),
-        )
+        ),
       ],
     );
   }
