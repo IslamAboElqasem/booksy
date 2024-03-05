@@ -1,3 +1,4 @@
+import 'package:book_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:book_app/Features/home/presentation/views/widgets/book_details_action.dart';
 import 'package:book_app/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:book_app/Features/home/presentation/views/widgets/cistom_book_image.dart';
@@ -5,7 +6,9 @@ import 'package:book_app/core/utilits/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
+  const BookDetailsSection({super.key, required this.book});
+
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
@@ -14,33 +17,32 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.18),
-          child: const CustomBookImage(
-              imageUrl:
-                  'https://i.pinimg.com/564x/e3/e0/09/e3e009f1b8215e6df098daf293a6bc18.jpg'),
+          child: CustomBookImage(
+              imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? ''),
         ),
         const SizedBox(
           height: 20,
         ),
-        const Text(
+        Text(
           textAlign: TextAlign.center,
-          'Harry Potter and the Philosopher’s Stone',
+          book.volumeInfo.title!,
           style: Styles.textStyle30,
         ),
         const SizedBox(
           height: 6,
         ),
         Text(
-          'J.k. Rowling',
+          book.volumeInfo.authors?[0] ?? '',
           style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
         ),
         const SizedBox(
           height: 18,
         ),
-        const BookRating(
+        BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
-          count: 250,
-          rating: 5,
+          count: book.volumeInfo.ratingsCount ?? 0,
+          rating: book.volumeInfo.averageRating ?? 0,
         ),
         const SizedBox(
           height: 37,
