@@ -1,3 +1,4 @@
+import 'package:book_app/constant.dart';
 import 'package:book_app/core/utilits/app_routes.dart';
 import 'package:book_app/core/utilits/assets.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class CustomAppBar extends StatelessWidget {
         children: [
           Image.asset(
             AssetsData.logo2,
-            height: 20,
+            height: 60,
           ),
           const Spacer(),
           IconButton(
@@ -23,6 +24,7 @@ class CustomAppBar extends StatelessWidget {
               GoRouter.of(context).push(AppRouter.kSearchView);
             },
             icon: const Icon(
+              color: kIconColor,
               FontAwesomeIcons.magnifyingGlass,
               size: 22,
             ),
