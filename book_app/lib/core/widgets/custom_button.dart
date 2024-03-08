@@ -2,14 +2,15 @@ import 'package:book_app/core/utilits/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
-    super.key,
-    required this.text,
-    required this.backgroundColor,
-    required this.textColor,
-    this.borderRadius,
-    this.fontSize,
-  });
+  const CustomButton(
+      {super.key,
+      required this.text,
+      required this.backgroundColor,
+      required this.textColor,
+      this.borderRadius,
+      this.fontSize,
+      this.onPressed});
+  final void Function()? onPressed;
   final String text;
   final Color backgroundColor;
   final Color textColor;
@@ -21,7 +22,7 @@ class CustomButton extends StatelessWidget {
     return SizedBox(
       height: 48,
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: TextButton.styleFrom(
             backgroundColor: backgroundColor,
             shape: RoundedRectangleBorder(
