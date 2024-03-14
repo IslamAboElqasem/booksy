@@ -3,21 +3,20 @@ import 'package:book_app/Features/home/data/repos/home_repo.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-part 'featured_books_state.dart';
+part 'search_cubit_state.dart';
 
-class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
-  FeaturedBooksCubit(this.homeRepo) : super(FeaturedBooksInitial());
-
+class SearchCubitCubit extends Cubit<SearchCubitState> {
+  SearchCubitCubit(this.homeRepo) : super(SearchCubitInitial());
   final HomeRepo homeRepo;
 
   Future<void> fetchFeaturedBooks() async {
-    emit(FeaturedBooksLoading());
+    emit(SearchCubitLoading());
     var result = await homeRepo.fetchFeatureBooks();
 
     result.fold((failure) {
-      emit(FeaturedBooksFailure(failure.msgError));
+      emit(SearchCubitFailure(failure.msgError));
     }, (books) {
-      emit(FeaturedBooksSuccess(books));
+      emit(SearchCubitSuccess(books));
     });
   }
 }
