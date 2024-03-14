@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'search_cubit_state.dart';
 
-class SearchCubitCubit extends Cubit<SearchCubitState> {
-  SearchCubitCubit(this.homeRepo) : super(SearchCubitInitial());
+class SearchCubit extends Cubit<SearchCubitState> {
+  SearchCubit(this.homeRepo) : super(SearchCubitInitial());
   final HomeRepo homeRepo;
 
   Future<void> fetchFeaturedBooks() async {
