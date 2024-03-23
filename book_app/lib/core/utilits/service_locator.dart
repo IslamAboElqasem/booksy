@@ -1,4 +1,5 @@
 import 'package:book_app/Features/home/data/repos/home_repo_impl.dart';
+import 'package:book_app/Features/search/data/repos/search_repo_impl.dart';
 import 'package:book_app/core/utilits/api_service.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -12,4 +13,7 @@ void setupServiceLocator() {
       getIt.get<ApiService>(),
     ),
   );
+  getIt.registerSingleton<SearchRepoIpl>(SearchRepoIpl(
+    getIt.get<ApiService>(),
+  ));
 }
