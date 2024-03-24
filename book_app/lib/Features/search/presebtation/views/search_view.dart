@@ -8,6 +8,18 @@ import 'package:go_router/go_router.dart';
 
 class SearchView extends SearchDelegate {
   @override
+  ThemeData appBarTheme(BuildContext context) {
+    return Theme.of(context).copyWith(
+      inputDecorationTheme: searchFieldDecorationTheme,
+      textSelectionTheme: const TextSelectionThemeData(
+          selectionColor: Color.fromARGB(255, 211, 204, 174)),
+      textTheme: Theme.of(context).textTheme.copyWith(
+            titleLarge: const TextStyle(color: Colors.white),
+          ),
+    );
+  }
+
+  @override
   List<Widget>? buildActions(BuildContext context) {
     return [
       IconButton(
