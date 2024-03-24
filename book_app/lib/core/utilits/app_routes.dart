@@ -3,7 +3,6 @@ import 'package:book_app/Features/home/data/repos/home_repo_impl.dart';
 import 'package:book_app/Features/home/presentation/view_models/similar_books_cubit/similar_books_cubit.dart';
 import 'package:book_app/Features/home/presentation/views/book_details_view.dart';
 import 'package:book_app/Features/home/presentation/views/home_view.dart';
-import 'package:book_app/Features/search/presebtation/views/search_view.dart';
 import 'package:book_app/Features/splash/presentation/views/splash_view.dart';
 import 'package:book_app/core/utilits/service_locator.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,10 +28,6 @@ abstract class AppRouter {
           create: (context) => SimilarBooksCubit(getIt.get<HomeRepoImpl>()),
           child: BookDetailsView(bookModel: state.extra as BookModel),
         ),
-      ),
-      GoRoute(
-        path: kSearchView,
-        builder: (context, state) => const SearchView(),
       ),
     ],
   );
